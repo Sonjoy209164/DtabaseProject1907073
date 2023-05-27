@@ -26,13 +26,13 @@ where payment_id < 5;
 --also this 
 select c.FIRST_NAME,c.SUR_NAME
 from customer c join PAYMENT P
-on c.CUSTOMER_ID=p.ORDER_ID where P.PAYMENT_ID<5
+on c.CUSTOMER_ID=p.ORDER_ID where P.PAYMENT_ID<5;
 
--- 34.Natural Join(customer_id, order_id):The NATURAL JOIN combines the rows from both
+-- 34.Natural Join(customer_id, order_id):(common)The NATURAL JOIN combines the rows from both
 -- tables where the values in the columns with the same name match.
 select c.first_name, c.sur_name
 from customer c natural join payment p
-where payment_id < 5;
+where payment_id < 13;
 
 -- 35.Cross Join:: Cartesian product.
 SELECT *
@@ -50,15 +50,26 @@ INNER JOIN customer_order ON customer.order_id = customer_order.order_id;
 select customer_id, c.first_name, c.sur_name, p.payment_method
 from customer c left outer join payment p
 using(customer_id)
-where customer_id < 5;
+where customer_id < 12;
+
+
+select customer_id, c.first_name
+from payment p left outer join customer c
+using(customer_id)
+where customer_id < 12;
 
 -- 38.Right Outer Join::A right outer join returns all records from the right table (payment) 
 --and the matching records from the left table (customer). 
 --If there is no match, null values are included for the columns from the left table.
-select p.payment_method, customer_id, c.first_name, c.sur_name
+select c.first_name, c.sur_name,p.payment_method, customer_id 
 from payment p right outer join customer c
 using(customer_id)
-where customer_id < 5;
+where customer_id < 12;
+
+select p.payment_method, customer_id, c.first_name, c.sur_name
+from customer c right outer join payment p
+using(customer_id)
+where customer_id < 12;
 
 -- 39.Full Outer Join::A full outer join returns all 
 --records from both the left table (customer) and the right table (payment).

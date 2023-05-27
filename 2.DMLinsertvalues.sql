@@ -5,11 +5,12 @@ insert into customer_order(order_id, amount, order_date) VALUES (2, 750, TO_DATE
 insert into customer_order(order_id, amount, order_date) VALUES (3, 900, to_date('23/05/02','yy/mm/dd'));
 insert into customer_order(order_id, amount, order_date) VALUES(4, 350, TO_DATE('23/05/04', 'YY/MM/DD'));
 insert into customer_order(order_id, amount, order_date) VALUES(5, 600, TO_DATE('23/05/05', 'YY/MM/DD'));
-insert into customer_order(order_id, amount, order_date) VALUES(6, 800, TO_DATE('23/05/06', 'YY/MM/DD'));
+insert into customer_order(order_id, amount, order_date) VALUES(6, 800, TO_DATE('29/05/06', 'YY/MM/DD'));
 insert into customer_order(order_id, amount, order_date) VALUES(7, 450, TO_DATE('23/05/07', 'YY/MM/DD'));
 insert into customer_order(order_id, amount, order_date) VALUES(8, 700, TO_DATE('23/05/08', 'YY/MM/DD'));
-insert into customer_order(order_id, amount, order_date) VALUES(9, 550, TO_DATE('23/05/09', 'YY/MM/DD'));
-insert into customer_order(order_id, amount, order_date) VALUES(10, 950, TO_DATE('23/05/10', 'YY/MM/DD'));
+insert into customer_order(order_id, amount, order_date) VALUES(9, 550, TO_DATE('26/05/09', 'YY/MM/DD'));
+insert into customer_order(order_id, amount, order_date) VALUES(10, 950, TO_DATE('25/05/10', 'YY/MM/DD'));
+insert into customer_order(order_id, amount, order_date) VALUES(11, 1950, TO_DATE('24/05/10', 'YY/MM/DD'));
 
 
 select * from customer_order;
@@ -25,6 +26,8 @@ INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email,
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (8, 'Kaiser', 'Kaushik', 'Dhaka', 'kaiser@example.com', 'kaiser', '01575284010', 8);
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (9, 'Olivia', 'Anderson', 'Dinajpur', 'olivia@example.com', 'password8', '01575284002', 9);
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (10, 'Ethan', 'Moore', 'Dinajpur', 'ethan@example.com', 'password10', '333-444-5555', 10);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (11, 'dipto', 'saha', 'Dinajpur', 'dipto@example.com', 'password11', '018888', 11);
+
 
 select * from CUSTOMER;
 
