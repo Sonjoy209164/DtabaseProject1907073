@@ -15,16 +15,16 @@ insert into customer_order(order_id, amount, order_date) VALUES(10, 950, TO_DATE
 select * from customer_order;
 
 -- Inserting values into customer table
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (1, 'Safwan', 'Zaher', 'Mohammadpur', 'safwan@example.com', 'safwan', '01575284003', 1);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (2, 'Seikh', 'Nibir', 'Farmgate', 'nibir@example.com', 'nibir', '01575284004', 2);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (1, 'Safwan', 'Zaher', 'Dhaka', 'safwan@example.com', 'safwan', '01575284003', 1);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (2, 'Seikh', 'Nibir', 'Dhaka', 'nibir@example.com', 'nibir', '01575284004', 2);
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (3, 'Ankon', 'Chowdhuri', 'Rajshahi', 'ankon@example.com', 'ankon', '01575284005', 3);
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (4, 'Sonjoy', 'Roy', 'Dinajpur', 'sonjoy@example.com', 'sonjoy', '01575284006', 4);
 INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (5, 'Doniel', 'Tripura', 'Khagrachari', 'doniel@example.com', 'doniel', '01575284007', 5);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (6, 'Talha', 'Nourin', 'Mirpur', 'talha@example.com', 'talha', '01575284008', 6);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (7, 'Mahmuda', 'Afrin', 'Katakhali', 'mahmuda@example.com', 'mahmuda', '01575284001', 7);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (8, 'Kaiser', 'Kaushik', 'Kakrail', 'kaiser@example.com', 'kaiser', '01575284010', 8);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (9, 'Olivia', 'Anderson', '852 Walnut St', 'olivia@example.com', 'password8', '01575284002', 9);
-INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (10, 'Ethan', 'Moore', '456 Cherry St', 'ethan@example.com', 'password10', '333-444-5555', 10);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (6, 'Talha', 'Nourin', 'Dhaka', 'talha@example.com', 'talha', '01575284008', 6);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (7, 'Mahmuda', 'Afrin', 'Rajshahi', 'mahmuda@example.com', 'mahmuda', '01575284001', 7);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (8, 'Kaiser', 'Kaushik', 'Dhaka', 'kaiser@example.com', 'kaiser', '01575284010', 8);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (9, 'Olivia', 'Anderson', 'Dinajpur', 'olivia@example.com', 'password8', '01575284002', 9);
+INSERT INTO customer (customer_id, first_name, Sur_name, current_address, email, password, phone, order_id) VALUES (10, 'Ethan', 'Moore', 'Dinajpur', 'ethan@example.com', 'password10', '333-444-5555', 10);
 
 select * from CUSTOMER;
 
@@ -54,16 +54,16 @@ select * from CATEGORY;
 
 
 -- Inserting values into furniture table
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (1, 'Sofa', 1, 'ABC Furniture', 1000);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (2, 'Bed', 2, 'XYZ Bedding', 800);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (3, 'Dining Table', 3, 'Home Decor', 600);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (4, 'Desk', 4, 'Office Solutions', 400);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (5, 'Patio Chair', 5, 'Outdoor Living', 200);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (6, 'Coffee Table', 1, 'ABC Furniture', 300);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (7, 'Wardrobe', 2, 'XYZ Bedding', 700);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (8, 'Kitchen Cabinet', 3, 'Home Decor', 500);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (9, 'Office Chair', 4, 'Office Solutions', 250);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (10, 'Outdoor Bench', 5, 'Outdoor Living', 150);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (1, 'Sofa', 1, 'RFL', 1000);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (2, 'Bed', 2, 'RFL', 800);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (3, 'Dining Table', 3, 'PARTEX', 600);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (4, 'Desk', 4, 'OTOBI', 400);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (5, 'Patio Chair', 5, '', 200);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (6, 'Coffee Table', 1, 'RFL', 300);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (7, 'Wardrobe', 2, 'OTOBI', 700);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (8, 'Kitchen Cabinet', 3, 'RFL', 500);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (9, 'Office Chair', 4, 'OTOBI', 250);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (10, 'Outdoor Bench', 5, 'RFL', 150);
 
 select * from furniture;
 

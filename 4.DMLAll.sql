@@ -56,10 +56,20 @@ SELECT furniture_name, price
 FROM TopFurniture
 WHERE rank <= 3;
 
---14
+--14 nested print the name of the buyer who has max order (quantity)
 
-select c.first_name , p.amount 
-
+select c.first_name from CUSTOMER c where CUSTOMER_ID in
+(
+  select CUSTOMER_ID from PAYMENT where ORDER_ID in
+  (
+    select ORDER_ID from ORDER_DETAILS 
+    where 
+    QUANTITY=
+    (
+      select max(QUANTITY) from ORDER_DETAILS
+    )
+  )
+);
 
 --15 retrive the second highest expensive furniture
 
@@ -69,4 +79,32 @@ WHERE price = (
   SELECT MAX(price)
   FROM FURNITURE
   WHERE price < (SELECT MAX(price) FROM FURNITURE)
+);
+
+--17Retrieve all products in the 'RFL' brand:
+SELECT *
+FROM furniture
+WHERE category_id IN (
+  SELECT category_id
+  FROM category
+  WHERE category_name = 'Outdoor'
+);
+
+--18.Retrieve customers who have made a payment and have not placed an order:
+SELECT *
+FROM customer
+WHERE customer_id IN (
+  SELECT customer_id
+  FROM payment
+) AND customer_id NOT IN (
+  SELECT customer_id
+  FROM customer_order
+);
+
+--19.Retrieve all customers who haven't bought product  more than price value 600 :
+SELECT *
+FROM customer
+WHERE customer_id NOT IN (
+  SELECT  customer_id
+  FROM payment  where AMOUNT<600
 );

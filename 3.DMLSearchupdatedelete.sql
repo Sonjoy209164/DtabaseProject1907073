@@ -19,8 +19,8 @@ where price between 300 and 800;
 
 select customer_id, first_name, SUR_NAME 
 from customer
-where customer_id not between 5 and 8 and;
+where customer_id not between 5 and 8 ;
 --5 search by address
 select customer_id, first_name, SUR_NAME  
 from customer
-where CURRENT_ADDRESS in ('Mirpur');
+where CURRENT_ADDRESS in ('Dhaka');
