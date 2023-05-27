@@ -1,11 +1,11 @@
 -- aggregate function for calculating the total payment DELETE
 -- 6. count total paid orders 
-select count(amount) as Total_order_paid from PAYMENT;
+SELECT count(amount) as Total_order_paid FROM PAYMENT;
 -- 7.average payment by each order id
- select avg (amount) as average_order_bill from PAYMENT;
+ SELECT avg (amount) as average_order_bill FROM PAYMENT;
 
 --8.group by ..print the total amount paid by bkash,nagad,upay
-select PAYMENT_METHOD, sum(amount) from payment
+SELECT PAYMENT_METHOD, sum(amount) FROM payment
  GROUP BY
   PAYMENT_METHOD ;
 
@@ -36,7 +36,7 @@ select amount , payment_method from payment
 WHERE
 AMOUNT>300;
 
---12.Intersection : Retrieve a table of customer name who paid by bkash and Rocket
+--12.except : Retrieve a table of customer name who paid by bkash and Rocket
 
 select amount , payment_method from payment
 WHERE
@@ -46,7 +46,7 @@ select amount , payment_method from payment
 WHERE
 PAYMENT_METHOD='Bkash';
 
---13 with Query to find the top three highest-priced furniture items:
+--13 with::: Query to find the top three highest-priced furniture items:
 
 WITH TopFurniture AS (
   SELECT furniture_name, price, ROW_NUMBER() OVER (ORDER BY price DESC) AS rank
@@ -56,7 +56,7 @@ SELECT furniture_name, price
 FROM TopFurniture
 WHERE rank <= 3;
 
---14 nested print the name of the buyer who has max order (quantity)
+--14 nested :::print the name of the buyer who has max order (quantity)
 
 select c.first_name from CUSTOMER c where CUSTOMER_ID in
 (
@@ -71,7 +71,7 @@ select c.first_name from CUSTOMER c where CUSTOMER_ID in
   )
 );
 
---15 retrive the second highest expensive furniture
+--15 nested:: retrive the second highest expensive furniture
 
 SELECT FURNITURE_ID, FURNITURE_NAME
 FROM FURNITURE
@@ -81,7 +81,7 @@ WHERE price = (
   WHERE price < (SELECT MAX(price) FROM FURNITURE)
 );
 
---17Retrieve all products in the 'RFL' brand:
+--17  in::Retrieve all products in the 'RFL' brand:
 SELECT *
 FROM furniture
 WHERE category_id IN (
@@ -90,7 +90,7 @@ WHERE category_id IN (
   WHERE category_name = 'Outdoor'
 );
 
---18.Retrieve customers who have made a payment and have not placed an order:
+--18.not in::Retrieve customers who have made a payment and have not placed an order:
 SELECT *
 FROM customer
 WHERE customer_id IN (
@@ -101,7 +101,7 @@ WHERE customer_id IN (
   FROM customer_order
 );
 
---19.Retrieve all customers who haven't bought product  more than price value 600 :
+--19. not in::Retrieve all customers who haven't bought product  more than price value 600 :
 SELECT *
 FROM customer
 WHERE customer_id NOT IN (
@@ -110,7 +110,7 @@ WHERE customer_id NOT IN (
 );
 
 
---20.Retrieve all furniture items that belong to the category 'Living Room' and have at least one customer order:
+--20.exists::Retrieve all furniture items that belong to the category 'Living Room' and have at least one customer order:
 SELECT *
 FROM furniture f
 WHERE category_id = (
@@ -122,7 +122,7 @@ WHERE category_id = (
   FROM Order_Details od
   WHERE od.product_id = f.furniture_id
 );
---21.Retrieve all furniture items that have not been ordered by any customer:
+--21.not exist::Retrieve all furniture items that have not been ordered by any customer:
 SELECT *
 FROM furniture f
 WHERE NOT EXISTS (
@@ -130,3 +130,53 @@ WHERE NOT EXISTS (
   FROM Order_Details od
   WHERE od.product_id = f.furniture_id
 );
+
+--22. some ::
+
+SELECT * FROM furniture 
+WHERE
+  price > SOME
+(SELECT price  FROM furniture WHERE price >= 300 );
+
+--23. all:: keyword Retrieve all furniture items with prices that are higher than all furniture items in the 'Office' category:
+
+
+SELECT * FROM furniture WHERE price >
+ALL
+(SELECT price FROM furniture WHERE brand='OTOBI'); 
+
+-- string operation 
+
+--24.Retrieve customers whose first names start with the letter 'A':
+SELECT *
+FROM customer
+WHERE first_name LIKE 'A%';
+
+
+--25.Retrieve customers whose email addresses contain the domain 'gmail.com':
+
+SELECT *
+FROM customer
+WHERE email LIKE '%gmail.com%';
+
+
+--26.Retrieve customers whose last names end with the letter 'son':
+
+SELECT *
+FROM customer
+WHERE sur_name LIKE '%son';
+--27.Retrieve customers whose first names have exactly 5 characters:
+
+SELECT *
+FROM customer
+WHERE LENGTH(first_name) = 5;
+--28.Retrieve customers whose first names start with 'J' and have a length of at least 6 characters:
+
+SELECT *
+FROM customer
+WHERE first_name LIKE 'S%' AND LENGTH(first_name) >= 2;
+
+--29 distinct 
+
+SELECT distinct CURRENT_ADDRESS from CUSTOMER;
+
