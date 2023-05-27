@@ -37,8 +37,8 @@ INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, pa
 INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES  (6, 6, 6, TO_DATE('2023-05-06', 'YYYY-MM-DD'), 800, 'Bkash');
 INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (7, 7, 7, TO_DATE('2023-05-07', 'YYYY-MM-DD'), 450, 'Rocket');
 INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (8, 8, 8, TO_DATE('2023-05-08', 'YYYY-MM-DD'), 700, 'Nagad');
-INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (9, 9, 9, TO_DATE('2023-05-09', 'YYYY-MM-DD'), 550, 'Upay');
-INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (10, 10, 10, TO_DATE('2023-05-10', 'YYYY-MM-DD'), 950, 'Cash');
+INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (9, 9, 3, TO_DATE('2023-05-09', 'YYYY-MM-DD'), 550, 'Upay');
+INSERT INTO payment (payment_id, customer_id, order_id, payment_date, amount, payment_method) VALUES (10, 10, 1, TO_DATE('2023-05-10', 'YYYY-MM-DD'), 950, 'Cash');
 
 select * FROM payment;
 
@@ -55,12 +55,12 @@ select * from CATEGORY;
 
 -- Inserting values into furniture table
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (1, 'Sofa', 1, 'RFL', 1000);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (2, 'Bed', 2, 'RFL', 800);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (2, 'Bed', 2, 'RFL', 600);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (3, 'Dining Table', 3, 'PARTEX', 600);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (4, 'Desk', 4, 'OTOBI', 400);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (5, 'Patio Chair', 5, '', 200);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (5, 'Patio Chair', 5, '', 400);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (6, 'Coffee Table', 1, 'RFL', 300);
-INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (7, 'Wardrobe', 2, 'OTOBI', 700);
+INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (7, 'Wardrobe', 2, 'OTOBI', 500);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (8, 'Kitchen Cabinet', 3, 'RFL', 500);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (9, 'Office Chair', 4, 'OTOBI', 250);
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (10, 'Outdoor Bench', 5, 'RFL', 150);
@@ -72,11 +72,11 @@ INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (1, 2, 1);
 INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (2, 1, 2);
 INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (3, 4, 3);
 INSERT INTO Order_Details (product_id, quantity, order_id) VALUES  (4, 1, 4);
-INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (5, 3, 5);
+INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (4, 3, 5);
 INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (6, 2, 6);
-INSERT INTO Order_Details (product_id, quantity, order_id) VALUES  (7, 1, 7);
-INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (8, 2, 8);
-INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (9, 3, 9);
+INSERT INTO Order_Details (product_id, quantity, order_id) VALUES  (4, 1, 7);
+INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (2, 2, 8);
+INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (7, 3, 9);
 INSERT INTO Order_Details (product_id, quantity, order_id) VALUES (10, 1, 10);
 
 select *from ORDER_DETAILS;

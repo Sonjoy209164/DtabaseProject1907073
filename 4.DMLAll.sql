@@ -108,3 +108,25 @@ WHERE customer_id NOT IN (
   SELECT  customer_id
   FROM payment  where AMOUNT<600
 );
+
+
+--20.Retrieve all furniture items that belong to the category 'Living Room' and have at least one customer order:
+SELECT *
+FROM furniture f
+WHERE category_id = (
+  SELECT category_id
+  FROM category
+  WHERE category_name = 'Living Room'
+) AND EXISTS (
+  SELECT *
+  FROM Order_Details od
+  WHERE od.product_id = f.furniture_id
+);
+--21.Retrieve all furniture items that have not been ordered by any customer:
+SELECT *
+FROM furniture f
+WHERE NOT EXISTS (
+  SELECT *
+  FROM Order_Details od
+  WHERE od.product_id = f.furniture_id
+);
