@@ -5,13 +5,14 @@
 --exception
 --exception handling
 --end;
+set serveroutput on
 DECLARE
  message VARCHAR(70):='Furniture management system';
 BEGIN
  DBMS_OUTPUT.put_line(message);
 END;
 /
---44 Find max price from product table
+--44 Find max price from furniture table
 set serveroutput on
 DECLARE
     max_price furniture.price%type;
@@ -215,6 +216,20 @@ END;
 /
 SHOW ERRORS;
 
+declare
+    v_customer_name VARCHAR2(100) := 'Ankon';
+    v_total_payment NUMBER;
+
+begin
+    select SUM(amount) into v_total_payment
+    from payment p
+    join customer c on c.customer_id = p.customer_id
+    where c.first_name = v_customer_name;
+
+    DBMS_OUTPUT.PUT_LINE('Total Payment for Customer ' || v_customer_name || ': ' || v_total_payment);
+end;
+/
+
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Total Sum: ' || total_sum);
 END;
@@ -237,5 +252,34 @@ SHOW ERRORS;
 
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Furniture Name: ' || furniture_name(7));
+END;
+/
+
+SET SERVEROUTPUT ON
+
+
+
+SET SERVEROUTPUT ON
+
+CREATE OR REPLACE FUNCTION get_order_payment_amount(
+    p_order_id IN payment.order_id%TYPE
+) RETURN NUMBER IS
+    total_amount NUMBER;
+BEGIN
+    SELECT SUM(amount) INTO total_amount
+    FROM payment
+    WHERE order_id = p_order_id;
+ 
+    RETURN total_amount;
+END get_order_payment_amount;
+/
+
+-- Example usage
+DECLARE
+    v_order_id payment.order_id%TYPE := 123; -- Replace with the desired order ID
+    v_total_payment NUMBER;
+BEGIN
+    v_total_payment := get_order_payment_amount(v_order_id);
+    DBMS_OUTPUT.PUT_LINE('Total Payment for Order ' || v_order_id || ': ' || v_total_payment);
 END;
 /

@@ -30,7 +30,7 @@ on c.CUSTOMER_ID=p.ORDER_ID where P.PAYMENT_ID<5;
 
 -- 34.Natural Join(customer_id, order_id):(common)The NATURAL JOIN combines the rows from both
 -- tables where the values in the columns with the same name match.
-select c.first_name, c.sur_name
+select c.first_name, c.sur_name,p.PAYMENT_METHOD
 from customer c natural join payment p
 where payment_id < 13;
 
@@ -74,7 +74,7 @@ where customer_id < 12;
 -- 39.Full Outer Join::A full outer join returns all 
 --records from both the left table (customer) and the right table (payment).
 select customer_id, c.first_name, c.sur_name, p.payment_method
-from customer c left outer join payment p
+from customer c full outer join payment p
 using(customer_id)
 where customer_id < 5;
 

@@ -1,6 +1,6 @@
 --1.update data in furniture table
  SELECT * from furniture;
-update furniture set FURNITURE_NAME='Table' where brand like 'ABC%';
+update furniture set FURNITURE_NAME='Table' where brand like 'R%';
  SELECT * from furniture;
 
 --- 2.delete a furniture 
@@ -13,7 +13,7 @@ update furniture set FURNITURE_NAME='Table' where brand like 'ABC%';
 
 select FURNITURE_NAME, brand
 from FURNITURE
-where price between 3000 and 8000;
+where price between 300 and 800;
 
 --4 
 
