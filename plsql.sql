@@ -26,17 +26,6 @@ end;
 
 
 
-set serveroutput on
-declare
-furniture_price furniture.price%type;
-furniture_item furniture.furniture_name%type := 'Bed';
-begin 
-select price into furniture_price
-from furniture
-where furniture_name = furniture_item;
- DBMS_OUTPUT.PUT_LINE('Furniture: ' || furniture_item || ', Price: ' || furniture_price);
-end;
-/
 
 --46.Calculate the discounted price for a furniture item:
 SET SERVEROUTPUT ON

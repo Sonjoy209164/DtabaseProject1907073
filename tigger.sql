@@ -13,9 +13,17 @@ BEGIN
 END;
 /
 
+create or replace trigger update_price 
+after insert or update on FURNITURE
+for each row
+enable 
+BEGIN
+update furniture.price =
 
-SELECT *FROM furniture;
+    
 
+
+ 
 INSERT INTO furniture (furniture_id, furniture_name, category_id, brand, price) VALUES (11, 'bed', 5, 'RFL', 1500);
  
  update furniture 
@@ -40,5 +48,5 @@ FURNITURE_ID=5;
 
  update furniture 
 set price=900 where 
-FURNITURE_ID=7;
+FURNITURE_ID=5;
 
